@@ -1,0 +1,6 @@
+sources:
+  app: {targetRevision: dev }                # keyed by source name, not list index
+syncPolicy:
+  syncOptions: [CreateNamespace=true, RespectIgnoreDifferences=false]
+ignoreDifferences:
+  - {group: networking.istio.io, kind: VirtualService, managedFieldsManagers: [rollouts-controller]}
