@@ -2,6 +2,7 @@ overrides: |
   destination:
     namespace: {{ .defaults.destination.namespace }}
   syncPolicy:
-    syncOptions: [CreateNamespace=true, RespectIgnoreDifferences=false]
+    syncOptions:
+      {{- toYaml .defaults.syncPolicy.syncOptions | nindent 4 -}}
   ignoreDifferences:
     - {group: networking.istio.io, kind: VirtualService, managedFieldsManagers: [rollouts-controller]}
