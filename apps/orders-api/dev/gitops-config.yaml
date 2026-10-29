@@ -1,4 +1,4 @@
-spec:
+overrides:
   syncPolicy:
     syncOptions: [CreateNamespace=true, RespectIgnoreDifferences=false]
   ignoreDifferences:
