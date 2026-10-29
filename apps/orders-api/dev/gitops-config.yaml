@@ -3,6 +3,8 @@ overrides: |
     namespace: {{ .defaults.destination.namespace }}
   syncPolicy:
     syncOptions:
-      {{- toYaml .defaults.syncPolicy.syncOptions | nindent 4 }}
+      {{- append .defaults.syncPolicy.syncOptions "Prune=true" | toYaml | nindent 4 }}
   ignoreDifferences:
     - {group: networking.istio.io, kind: VirtualService, managedFieldsManagers: [rollouts-controller]}
+
+#      {{- toYaml .defaults.syncPolicy.syncOptions | nindent 4 }}    
