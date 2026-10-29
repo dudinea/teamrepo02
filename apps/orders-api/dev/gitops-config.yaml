@@ -1,6 +1,6 @@
 overrides: |
   destination:
-    namespace: {{ .defaults.destination.namespace }}
+    namespace: "{{ .defaults.destination.namespace }}"
   syncPolicy:
     syncOptions: [CreateNamespace=true, RespectIgnoreDifferences=false]
   ignoreDifferences:
