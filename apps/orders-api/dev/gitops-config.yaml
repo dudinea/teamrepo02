@@ -1,5 +1,5 @@
 overrides: |
   syncPolicy:
-    syncOptions: {{- .defaults.syncPolicy.syncOptions -}}
+    syncOptions: [CreateNamespace=true, RespectIgnoreDifferences=false]
   ignoreDifferences:
     - {group: networking.istio.io, kind: VirtualService, managedFieldsManagers: [rollouts-controller]}
